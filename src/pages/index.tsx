@@ -5,6 +5,13 @@ import taskDummy from '@/factory/home/tasks'
 import statusMasterDummy from '@/factory/master/status'
 import StatusEnum from '@/enum/status'
 import { TheButton } from '@/components'
+import {
+  DragDropContext,
+  Draggable,
+  Droppable,
+  DraggableProvided,
+  DroppableProvided
+} from "react-beautiful-dnd";
 
 export default function Home() {
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -18,11 +25,10 @@ export default function Home() {
 
   const add = (item: Task) => {
     setTasks((prevTasks) => [...prevTasks,item])
+    toggleModal();
   }
 
   const updateStatusTask = (id: number, idStatus: StatusEnum) => {
-    console.log(id,'+', idStatus )
-    console.log(tasks.map((task) => task.id === id ? {...task, status: idStatus} : task))
     setTasks((prevTasks) => prevTasks.map((task) => task.id === id ? {...task, status: idStatus} : task))
   }
 
@@ -30,19 +36,37 @@ export default function Home() {
     setIsShowAddModal((prevIsShowAddModal) => !prevIsShowAddModal)
   }
 
+  const onDragEnd = (result: any) => {
+    if (!result.destination || !result.source.index) return
+
+    updateStatusTask(result.source.index, result.destination.index)
+  };
+
   return (
     <>
-     <h1>Title</h1>
-     <TheButton onClick={toggleModal}>+Add</TheButton>
-     <div className="flex">
-     {statusMaster.map((itemStatus) => (
-        <HomeGroupTask
-          tasks={tasks?.filter((itemTask)=> itemTask.status === itemStatus.id)}
-          status={itemStatus}
-          key={itemStatus.id}
-          updateStatusTask={updateStatusTask}
-        />
-      ))}
+     <div className="max-w-screen-lg mx-auto px-3">
+      <h1 className="font-bold text-center">Title</h1>
+      <div className="text-center">
+        <TheButton onClick={toggleModal}>+Add</TheButton>
+      </div>
+      <DragDropContext onDragEnd={onDragEnd}>
+        <div className="grid gap-4 grid-cols-4 mt-3">
+        {statusMaster.map((itemStatus) => (
+          <Droppable droppableId={itemStatus.label} key={itemStatus.id}>
+          {(
+            provided: DroppableProvided | any
+          ) => (
+              <div  ref={provided.innerRef}>
+              <HomeGroupTask
+                tasks={tasks?.filter((itemTask)=> itemTask.status === itemStatus.id)}
+                status={itemStatus}
+              />
+              </div>
+            )}
+            </Droppable>
+          ))}
+        </div>
+      </DragDropContext>
      </div>
 
      {isShowAddModal && <HomeAddTaskModal title='add Title' add={add}  close={toggleModal}/>}

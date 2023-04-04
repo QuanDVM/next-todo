@@ -4,7 +4,7 @@ interface InputCustomProps {
   value: string;
   placeholder?: string;
   name: string;
-  onChange: (value: string) => void
+  onChange: (value: any) => void
   maxLength?: number
 }
 
@@ -24,7 +24,7 @@ const TheTextField: React.FC<InputCustomProps> = ({
       value={value}
       name={name}
       placeholder={placeholder}
-      onChange={(e) => onChange(e.target.value)}
+      onChange={(e) => onChange(e)}
     />
   );
 };

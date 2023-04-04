@@ -2,17 +2,20 @@ import { Task } from '@/entities'
 
 type HomeTaskProps = {
   task: Task;
-  onDragStart: (e: any, id: number) => void
-  onDragEnd: () => void
 };
 
-const HomeGroupTask = ({task, onDragStart, onDragEnd}: HomeTaskProps) => {
+const HomeGroupTask = ({task}: HomeTaskProps) => {
   return (
     <>
-      <div draggable onDragStart={e => onDragStart(e, task.id)} onDragEnd={onDragEnd}>
-          <p>{ task.title }</p>
-          <p>{ task.content }</p>
-          <p>{ task.status }</p>
+      <div>
+          <p>
+            <span className="font-bold">Title:</span>
+            <span>{ task.title }</span>
+          </p>
+          <p>
+            <span className="font-bold">Content:</span>
+            <span>{ task.content }</span>
+          </p>
      </div>
     </>
   )

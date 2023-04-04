@@ -9,7 +9,10 @@ type TheButtonProps = {
 const TheButton: React.FC<TheButtonProps> = ({ type, children, onClick }) => {
   return (
     <button type={type} className={styles.theButton} onClick={onClick}>
-      {children}
+      <div className={styles.theButton__main}>
+        <span className={styles.theButton__background}></span> 
+        <span className={styles.theButton__text}>{children}</span>
+      </div>
     </button>
   );
 };
