@@ -1,7 +1,7 @@
 import StatusEnum from '@/enum/status';
 
 export default interface Task {
-  id: number,
+  id: string,
   title: string,
   content: string,
   status: StatusEnum

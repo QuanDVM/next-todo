@@ -1,83 +1,54 @@
 
 const tasks = [
   {
-    id: 1,
+    id: 'AA1',
     title: 'donate tiền QuanDVM',
     content: 'chuyển vào số tài khoản 14101214218 TPBANK',
     status: 1
   },
   {
-    id: 2,
+    id: 'AA134',
+    title: 'donate tiền QuanDVM',
+    content: 'chuyển vào số tài khoản 14101214218 TPBANK',
+    status: 1
+  },
+  {
+    id: 'AVV3',
     title: 'donate tiền QuanDVM',
     content: 'chuyển vào số tài khoản 14101214218 TPBANK',
     status: 2
   },
   {
-    id: 3,
-    title: 'donate tiền QuanDVM',
-    content: 'chuyển vào số tài khoản 14101214218 TPBANK',
-    status: 3
-  },
-  {
-    id: 4,
-    title: 'donate tiền QuanDVM',
-    content: 'chuyển vào số tài khoản 14101214218 TPBANK',
-    status: 4
-  },
-  {
-    id: 5,
-    title: 'donate tiền QuanDVM',
-    content: 'chuyển vào số tài khoản 14101214218 TPBANK',
-    status: 1
-  },
-  {
-    id: 6,
+    id: 'fff',
     title: 'donate tiền QuanDVM',
     content: 'chuyển vào số tài khoản 14101214218 TPBANK',
     status: 2
   },
   {
-    id: 7,
+    id: 'bbb',
     title: 'donate tiền QuanDVM',
     content: 'chuyển vào số tài khoản 14101214218 TPBANK',
     status: 3
   },
   {
-    id: 8,
-    title: 'donate tiền QuanDVM',
-    content: 'chuyển vào số tài khoản 14101214218 TPBANK',
-    status: 4
-  },
-  {
-    id: 9,
-    title: 'donate tiền QuanDVM',
-    content: 'chuyển vào số tài khoản 14101214218 TPBANK',
-    status: 1
-  },
-  {
-    id: 10,
-    title: 'donate tiền QuanDVM',
-    content: 'chuyển vào số tài khoản 14101214218 TPBANK',
-    status: 2
-  },
-  {
-    id: 11,
+    id: 's22',
     title: 'donate tiền QuanDVM',
     content: 'chuyển vào số tài khoản 14101214218 TPBANK',
     status: 3
   },
   {
-    id: 12,
+    id: 'jjj44',
     title: 'donate tiền QuanDVM',
     content: 'chuyển vào số tài khoản 14101214218 TPBANK',
     status: 4
   },
   {
-    id: 13,
+    id: '11199',
     title: 'donate tiền QuanDVM',
     content: 'chuyển vào số tài khoản 14101214218 TPBANK',
-    status: 1
-  }
+    status: 4
+  },
+
 ]
 
 export default tasks

@@ -2,18 +2,21 @@ import styles from "./the-item-form.module.scss";
 
 type TheItemFormProps = {
   label?: string
-  children?: React.ReactNode;
+  children?: React.ReactNode
+  className?: string
 }
 
-const TheCard = ({children, label}: TheItemFormProps) => {
+const TheItemForm = ({children, label, className}: TheItemFormProps) => {
   return (
     <>
-     <div className={styles.theItemForm}>
-      { label && <label>{label}</label>}
-     <div>{ children }</div>
+      <div className={className}>
+        <div className={styles.theItemForm}>
+          { label && <label className="font-bold">{label}</label>}
+          <div className={!!label ? 'mt-2' : ''}>{ children }</div>
+        </div>
      </div>
     </>
   )
 }
 
-export default TheCard
+export default TheItemForm
