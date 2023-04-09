@@ -17,9 +17,9 @@ const HomeGroupTask = ({status, tasks, removeTask}: HomeGroupTaskProps) => {
     <>
       <div>
         <h3 className="text-center underline font-bold uppercase">{ status.label }</h3>
-        {tasks.map((item) => (
+        {tasks?.map((item, index) => (
           <div className="mt-4" key={item.id}>
-          <Draggable draggableId={`${item.title}${item.id}`} index={item.id}>
+          <Draggable draggableId={`${item.title}${item.id}`} index={index}>
             {(provided: DraggableProvided ) => (
               <div
                 ref={provided.innerRef}
