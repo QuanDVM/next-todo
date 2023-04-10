@@ -1,0 +1,38 @@
+.theButton {
+  border: 0;
+  cursor: pointer;
+  padding: 8px;
+  text-align: center;
+  position: relative;
+  background-color: transparent;
+  font-weight: bold;
+
+  &::before,
+  &::after {
+    content: "";
+    border-color: #bdbcb7;
+    display: block;
+    height: calc(50% - 8px);
+    position: absolute;
+    width: 100%;
+    border: 1px solid hsla(38,22%,90%);
+  }
+
+  &::before {
+    border-bottom: 0;
+    top: 0;
+    left: 0;
+  }
+  
+  &::after {
+    border-top: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  &__main {
+    background-color: #ff4655;
+    padding: 8px 12px;
+    color: #ece8e1;
+  }
+}
